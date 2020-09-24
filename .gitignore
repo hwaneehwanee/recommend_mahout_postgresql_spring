@@ -4,3 +4,4 @@ target/
 .settings/
 
 src/main/resources/application.properties
+/bin/

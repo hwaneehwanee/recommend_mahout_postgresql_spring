@@ -38,11 +38,11 @@ public class ItemSimilarityRecommendCsvController {
 			DataModel model = new FileDataModel(new File( dataFilePath.getPath() )); // 데이터 파일 읽기
 			
 			ItemSimilarity sim = new LogLikelihoodSimilarity(model);
-			GenericItemBasedRecommender recommender = new GenericBooleanPrefItemBasedRecommender(model, sim);
+			GenericItemBasedRecommender recommender = new GenericItemBasedRecommender(model, sim);
+			long itemId = Long.parseLong(request.getParameter("itemId"));
+			int recommendCnt = Integer.parseInt(request.getParameter("recommendCnt"));
+			List<RecommendedItem> recommendations = recommender.mostSimilarItems(itemId, recommendCnt);
 			
-			long itemId = 100170;
-			List<RecommendedItem> recommendations = recommender.mostSimilarItems(itemId, 10);
-
 			for(RecommendedItem recommendation : recommendations) {
 				log.debug("############## " + "id: " +  recommendation.getItemID() + "   value: " +  recommendation.getValue()    );
 			}

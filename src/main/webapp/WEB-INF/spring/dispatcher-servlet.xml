@@ -9,7 +9,7 @@
         http://www.springframework.org/schema/mvc 
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<context:property-placeholder location="classpath:application.properties" />
+	<context:property-placeholder location="classpath:application.properties.sample" />
 
 	<context:component-scan base-package="com.daidalos.developer.controller" />
 

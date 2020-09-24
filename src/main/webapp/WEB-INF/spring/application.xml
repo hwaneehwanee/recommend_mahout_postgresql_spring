@@ -20,7 +20,7 @@
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 
-	<context:property-placeholder location="classpath:application.properties" />
+	<context:property-placeholder location="classpath:application.properties.sample" />
 
 	<bean id="characterEncodingFilter" class="org.springframework.web.filter.CharacterEncodingFilter">
 		<property name="encoding" value="utf-8" />
